@@ -87,7 +87,7 @@ class ApplicationData
     func readCountries()
     {
         let predicate   = NSPredicate(format: "TRUEPREDICATE")
-        let query       = CKQuery(recordType: "Cities", predicate: predicate)
+        let query       = CKQuery(recordType: "Countries", predicate: predicate)
 
         database.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
             if error != nil

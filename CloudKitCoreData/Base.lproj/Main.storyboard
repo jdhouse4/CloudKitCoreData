@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q9V-hK-MJB">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Countries View Controller-->
+        <!--Countries Table View Controller-->
         <scene sceneID="Vp1-Um-ePU">
             <objects>
-                <tableViewController id="bBn-45-vfy" userLabel="Countries View Controller" customClass="CountriesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bBn-45-vfy" userLabel="Countries Table View Controller" customClass="CountriesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zh0-9P-K4J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,17 +46,21 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Countries" id="awj-uc-t4M" userLabel="Countries">
                         <barButtonItem key="backBarButtonItem" title="Countries" id="xbd-xj-dpM"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHS-HG-Cvp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHS-HG-Cvp">
+                            <connections>
+                                <action selector="addCountry:" destination="bBn-45-vfy" id="Y4W-Y9-obG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH5-d8-xyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377" y="117"/>
         </scene>
-        <!--Cities View Controller-->
+        <!--Cities Table View Controller-->
         <scene sceneID="jGA-k3-yJg">
             <objects>
-                <tableViewController id="jZP-o1-WtC" userLabel="Cities View Controller" customClass="CitiesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jZP-o1-WtC" userLabel="Cities Table View Controller" customClass="CitiesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lGg-7I-q3A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +87,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Cities" id="AKP-O3-ZcH" userLabel="Cities">
                         <barButtonItem key="backBarButtonItem" title="Countries" id="8Sj-c1-cL8"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zup-ZD-vfd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zup-ZD-vfd">
+                            <connections>
+                                <action selector="addCityWith_sender:" destination="jZP-o1-WtC" id="GKm-4S-t9Q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-AG-P8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bBn-45-vfy" kind="relationship" relationship="rootViewController" id="Xad-wf-Oet"/>
+                        <segue destination="bBn-45-vfy" kind="relationship" relationship="rootViewController" id="RwI-1x-8ns"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njY-oL-Xcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
