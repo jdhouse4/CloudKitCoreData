@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E653438F224547BE00C79868 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653438E224547BE00C79868 /* CitiesTableViewController.swift */; };
-		E6534390224547BE00C79868 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653438E224547BE00C79868 /* CitiesTableViewController.swift */; };
-		E6534391224547BE00C79868 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653438E224547BE00C79868 /* CitiesTableViewController.swift */; };
 		E6C9B7AF2230BD8200B9F63C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */; };
-		E6C9B7B12230BD8200B9F63C /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7B02230BD8200B9F63C /* CountriesViewController.swift */; };
+		E6C9B7B12230BD8200B9F63C /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */; };
 		E6C9B7B42230BD8200B9F63C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C9B7B22230BD8200B9F63C /* Main.storyboard */; };
 		E6C9B7B62230BD8400B9F63C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C9B7B52230BD8400B9F63C /* Assets.xcassets */; };
 		E6C9B7B92230BD8400B9F63C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C9B7B72230BD8400B9F63C /* LaunchScreen.storyboard */; };
@@ -42,7 +40,7 @@
 		E653438E224547BE00C79868 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		E6C9B7AB2230BD8200B9F63C /* CloudKitCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6C9B7B02230BD8200B9F63C /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		E6C9B7B32230BD8200B9F63C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6C9B7B52230BD8400B9F63C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6C9B7B82230BD8400B9F63C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,7 +109,7 @@
 				E6C9B7DC2230BD9B00B9F63C /* CloudKitCoreData.entitlements */,
 				E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */,
 				E6C9B7E02231935600B9F63C /* ApplicationData.swift */,
-				E6C9B7B02230BD8200B9F63C /* CountriesViewController.swift */,
+				E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */,
 				E653438E224547BE00C79868 /* CitiesTableViewController.swift */,
 				E6C9B7B22230BD8200B9F63C /* Main.storyboard */,
 				E6C9B7B52230BD8400B9F63C /* Assets.xcassets */,
@@ -287,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6C9B7E12231935600B9F63C /* ApplicationData.swift in Sources */,
-				E6C9B7B12230BD8200B9F63C /* CountriesViewController.swift in Sources */,
+				E6C9B7B12230BD8200B9F63C /* CountriesTableViewController.swift in Sources */,
 				E653438F224547BE00C79868 /* CitiesTableViewController.swift in Sources */,
 				E6C9B7AF2230BD8200B9F63C /* AppDelegate.swift in Sources */,
 			);
@@ -297,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6534390224547BE00C79868 /* CitiesTableViewController.swift in Sources */,
 				E6C9B7C42230BD8400B9F63C /* CloudKitCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6534391224547BE00C79868 /* CitiesTableViewController.swift in Sources */,
 				E6C9B7CF2230BD8400B9F63C /* CloudKitCoreDataUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

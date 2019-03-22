@@ -1,5 +1,5 @@
 //
-//  CountriesViewController.swift
+//  CountriesTableViewController.swift
 //  CloudKitCoreData
 //
 //  Created by James Hillhouse IV on 3/6/19.
@@ -12,7 +12,7 @@ import CloudKit
 
 
 
-class CountriesViewController: UITableViewController
+class CountriesTableViewController: UITableViewController
 {
     override func viewDidLoad()
     {
