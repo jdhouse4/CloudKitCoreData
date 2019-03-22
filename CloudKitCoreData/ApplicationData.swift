@@ -23,7 +23,8 @@ class ApplicationData
 
     init()
     {
-        let container   = CKContainer.default()
+        //let container   = CKContainer.default()
+        let container   = CKContainer(identifier: "iCloud.com.portablefrontier.CloudKitCoreData")
         database        = container.publicCloudDatabase
     }
 
@@ -61,7 +62,7 @@ class ApplicationData
 
         if text != ""
         {
-            let id      = CKRecord.ID(recordName: "idcity-](UUID())")
+            let id      = CKRecord.ID(recordName: "idcity-\(UUID())")
             let record  = CKRecord(recordType: "Cities", recordID: id)
             record.setObject(text as NSString, forKey: "name")
 
@@ -86,6 +87,7 @@ class ApplicationData
 
     func readCountries()
     {
+        print("Reading countries")
         let predicate   = NSPredicate(format: "TRUEPREDICATE")
         let query       = CKQuery(recordType: "Countries", predicate: predicate)
 
@@ -101,6 +103,7 @@ class ApplicationData
                 for record in list
                 {
                     self.listCountries.append(record)
+                    print("self.listCountries.append(record): \(record)")
                 }
                 self.updateInterface()
             }
@@ -128,6 +131,7 @@ class ApplicationData
                     for record in list
                     {
                         self.listCities.append(record)
+                        print("readCities \(record)")
                     }
                     self.updateInterface()
                 }
@@ -139,11 +143,13 @@ class ApplicationData
 
     func updateInterface()
     {
+        print("ApplicationData func updateInterface()")
         let main = OperationQueue.main
         main.addOperation ({
             let center  = NotificationCenter.default
             let name    = Notification.Name("UpdateInterface")
             center.post(name: name, object: nil, userInfo: nil)
+            print("Posting: \(name)")
         })
     }
 }

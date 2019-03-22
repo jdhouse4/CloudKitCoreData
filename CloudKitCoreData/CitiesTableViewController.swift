@@ -20,7 +20,7 @@ class CitiesTableViewController: UITableViewController
         super.viewDidLoad()
 
         let center  = NotificationCenter.default
-        let name    = Notification.Name("Update Interface")
+        let name    = Notification.Name("UpdateInterface")
 
         center.addObserver(self, selector: #selector(updateInterface(notification:)), name: name, object: nil)
 
@@ -31,6 +31,7 @@ class CitiesTableViewController: UITableViewController
 
     @objc func updateInterface(notification: Notification)
     {
+        print("CiiesTableViewController func updateInterface(notification: Notification)")
         tableView.reloadData()
     }
 
@@ -39,6 +40,7 @@ class CitiesTableViewController: UITableViewController
     // MARK: Table View Controller Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        print("AppData.listCiies.count = \(AppData.listCities.count)")
         return AppData.listCities.count
     }
 

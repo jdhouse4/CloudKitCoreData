@@ -19,7 +19,7 @@ class CountriesTableViewController: UITableViewController
         super.viewDidLoad()
 
         let center  = NotificationCenter.default
-        let name    = Notification.Name("Update Interface")
+        let name    = Notification.Name("UpdateInterface")
         center.addObserver(self, selector: #selector(updateInterface(notification:)), name: name, object: nil)
 
         AppData.readCountries()
@@ -29,6 +29,7 @@ class CountriesTableViewController: UITableViewController
 
     @objc func updateInterface(notification: Notification)
     {
+        print("CountriesTableViewController func updateInterface(notification: Notification)")
         tableView.reloadData()
     }
 
@@ -36,12 +37,14 @@ class CountriesTableViewController: UITableViewController
 
     // MARK: Table View Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("AppData.listCountries.count = \(AppData.listCountries.count)")
         return AppData.listCountries.count
     }
 
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("Cranking-out tableview cells...")
         let cell    = tableView.dequeueReusableCell(withIdentifier: "countriesCell", for: indexPath)
         let record  = AppData.listCountries[indexPath.row]
 
@@ -49,6 +52,8 @@ class CountriesTableViewController: UITableViewController
         {
             cell.textLabel?.text = name
         }
+
+        print("Finished reading countries!")
 
         return cell
     }
@@ -58,15 +63,18 @@ class CountriesTableViewController: UITableViewController
     // MARK: Target and Action Functions
     @IBAction func addCountry(_ sender: UIBarButtonItem)
     {
+        print("Adding a country")
         let alert   = UIAlertController(title: "Insert Country", message: nil, preferredStyle: .alert)
         let cancel  = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancel)
+        print("Displaying Save Country alert.")
 
         let action = UIAlertAction(title: "Save", style: .default, handler: { (action) in
             if let fields = alert.textFields
             {
                 let name = fields[0].text!
                 AppData.insertCountry(name: name)
+                print("Saving a country")
             }
         })
 
