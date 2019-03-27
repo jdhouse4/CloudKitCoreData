@@ -75,6 +75,7 @@ class ApplicationData
             {
                 let asset = CKAsset(fileURL: fileURL)
                 record.setObject(asset, forKey: "picture")
+                print("We've got picture!")
             }
 
             database.save(record, completionHandler: { (recordSaved, error) in
