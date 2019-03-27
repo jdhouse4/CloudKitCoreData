@@ -118,9 +118,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9RT-F3-c4U"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Z1b-Ed-F5f">
-                        <barButtonItem key="backBarButtonItem" title="Cities" id="wRs-35-iKi"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="cityPicture" destination="qIK-GJ-qEM" id="qwx-oq-VIO"/>
                     </connections>
