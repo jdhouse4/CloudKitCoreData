@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E64ABD66224B2581004BAF5C /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64ABD65224B2581004BAF5C /* PicturesViewController.swift */; };
+		E64ABD68224B2AA3004BAF5C /* KSC.png in Resources */ = {isa = PBXBuildFile; fileRef = E64ABD67224B2AA2004BAF5C /* KSC.png */; };
 		E653438F224547BE00C79868 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653438E224547BE00C79868 /* CitiesTableViewController.swift */; };
 		E6C9B7AF2230BD8200B9F63C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */; };
 		E6C9B7B12230BD8200B9F63C /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E64ABD65224B2581004BAF5C /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		E64ABD67224B2AA2004BAF5C /* KSC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KSC.png; sourceTree = "<group>"; };
 		E653438E224547BE00C79868 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		E6C9B7AB2230BD8200B9F63C /* CloudKitCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +115,10 @@
 				E6C9B7E02231935600B9F63C /* ApplicationData.swift */,
 				E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */,
 				E653438E224547BE00C79868 /* CitiesTableViewController.swift */,
+				E64ABD65224B2581004BAF5C /* PicturesViewController.swift */,
 				E6C9B7B22230BD8200B9F63C /* Main.storyboard */,
 				E6C9B7B52230BD8400B9F63C /* Assets.xcassets */,
+				E64ABD67224B2AA2004BAF5C /* KSC.png */,
 				E6C9B7B72230BD8400B9F63C /* LaunchScreen.storyboard */,
 				E6C9B7BA2230BD8400B9F63C /* Info.plist */,
 			);
@@ -260,6 +266,7 @@
 				E6C9B7B92230BD8400B9F63C /* LaunchScreen.storyboard in Resources */,
 				E6C9B7B62230BD8400B9F63C /* Assets.xcassets in Resources */,
 				E6C9B7B42230BD8200B9F63C /* Main.storyboard in Resources */,
+				E64ABD68224B2AA3004BAF5C /* KSC.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 			files = (
 				E6C9B7E12231935600B9F63C /* ApplicationData.swift in Sources */,
 				E6C9B7B12230BD8200B9F63C /* CountriesTableViewController.swift in Sources */,
+				E64ABD66224B2581004BAF5C /* PicturesViewController.swift in Sources */,
 				E653438F224547BE00C79868 /* CitiesTableViewController.swift in Sources */,
 				E6C9B7AF2230BD8200B9F63C /* AppDelegate.swift in Sources */,
 			);

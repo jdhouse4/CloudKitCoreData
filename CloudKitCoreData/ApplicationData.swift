@@ -69,6 +69,14 @@ class ApplicationData
             let reference = CKRecord.Reference(recordID: selectedCountry, action: .deleteSelf)
             record.setObject(reference, forKey: "country")
 
+            let bundle = Bundle.main
+
+            if let fileURL = bundle.url(forResource: "KSC", withExtension: "png")
+            {
+                let asset = CKAsset(fileURL: fileURL)
+                record.setObject(asset, forKey: "picture")
+            }
+
             database.save(record, completionHandler: { (recordSaved, error) in
                 if error != nil
                 {
@@ -88,7 +96,8 @@ class ApplicationData
     func readCountries()
     {
         print("Reading countries")
-        let predicate   = NSPredicate(format: "TRUEPREDICATE")
+        //let predicate   = NSPredicate(format: "TRUEPREDICATE")
+        let predicate   = NSPredicate(value: true)
         let query       = CKQuery(recordType: "Countries", predicate: predicate)
 
         database.perform(query, inZoneWith: nil, completionHandler: { (records, error) in

@@ -37,6 +37,20 @@ class CitiesTableViewController: UITableViewController
 
 
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showPicture"
+        {
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                let controller = segue.destination as! PicturesViewController
+                controller.selectedCity = AppData.listCities[indexPath.row]
+            }
+        }
+    }
+
+
+
     // MARK: Table View Controller Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
