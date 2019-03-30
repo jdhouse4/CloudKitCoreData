@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sZA-M5-VBS">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jZP-o1-WtC" kind="show" identifier="showCities" id="Vqa-UU-RyV"/>
+                                    <segue destination="qU0-EJ-QYm" kind="show" identifier="showCities" id="pwD-mO-ef9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,6 +52,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH5-d8-xyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377" y="117"/>
+        </scene>
+        <!--Root Navigation Controller-->
+        <scene sceneID="ERa-l1-8Jd">
+            <objects>
+                <navigationController id="sZA-M5-VBS" userLabel="Root Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yVN-Lm-sy0">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZv-st-rwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1711" y="941"/>
+        </scene>
+        <!--Cities Navigation Controller-->
+        <scene sceneID="xiN-bh-xfs">
+            <objects>
+                <navigationController id="qU0-EJ-QYm" userLabel="Cities Navigation Controller" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="14K-yM-Q1k"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u1W-Ax-03k">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jZP-o1-WtC" kind="relationship" relationship="rootViewController" id="pSf-26-mGB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2DB-fH-aIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543" y="942"/>
         </scene>
         <!--Cities View Controller-->
         <scene sceneID="jGA-k3-yJg">
@@ -88,12 +118,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-AG-P8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="117"/>
+            <point key="canvasLocation" x="377" y="941"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Countries Navigation Controller-->
         <scene sceneID="jee-jQ-ZVn">
             <objects>
-                <navigationController id="q9V-hK-MJB" sceneMemberID="viewController">
+                <navigationController id="q9V-hK-MJB" userLabel="Countries Navigation Controller" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="o2r-0x-oI0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ma8-Gw-DV0">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
