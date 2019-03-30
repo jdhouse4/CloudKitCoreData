@@ -84,13 +84,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Th3-0n-5Hj" kind="show" identifier="showPicture" id="Ra7-19-43b"/>
+                                    <segue destination="Th3-0n-5Hj" kind="show" identifier="showPicture" id="oeb-E6-FxU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cities" id="AKP-O3-ZcH" userLabel="Cities">
-                        <barButtonItem key="backBarButtonItem" title="Countries" id="8Sj-c1-cL8"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zup-ZD-vfd">
                             <connections>
                                 <action selector="addCityWith_sender:" destination="jZP-o1-WtC" id="GKm-4S-t9Q"/>
