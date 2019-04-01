@@ -19,6 +19,7 @@
 		E6C9B7CF2230BD8400B9F63C /* CloudKitCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7CE2230BD8400B9F63C /* CloudKitCoreDataUITests.swift */; };
 		E6C9B7DF2230BDD300B9F63C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C9B7DE2230BDD300B9F63C /* CloudKit.framework */; };
 		E6C9B7E12231935600B9F63C /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9B7E02231935600B9F63C /* ApplicationData.swift */; };
+		E6DF3EB62251C09A00906995 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF3EB52251C09A00906995 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E6C9B7DC2230BD9B00B9F63C /* CloudKitCoreData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitCoreData.entitlements; sourceTree = "<group>"; };
 		E6C9B7DE2230BDD300B9F63C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E6C9B7E02231935600B9F63C /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		E6DF3EB52251C09A00906995 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		E6C9B7A22230BD8200B9F63C = {
 			isa = PBXGroup;
 			children = (
+				E6DF3EB52251C09A00906995 /* MasterViewController.swift */,
 				E6C9B7AD2230BD8200B9F63C /* CloudKitCoreData */,
 				E6C9B7C22230BD8400B9F63C /* CloudKitCoreDataTests */,
 				E6C9B7CD2230BD8400B9F63C /* CloudKitCoreDataUITests */,
@@ -293,6 +296,7 @@
 			files = (
 				E6C9B7E12231935600B9F63C /* ApplicationData.swift in Sources */,
 				E6C9B7B12230BD8200B9F63C /* CountriesTableViewController.swift in Sources */,
+				E6DF3EB62251C09A00906995 /* MasterViewController.swift in Sources */,
 				E64ABD66224B2581004BAF5C /* PicturesViewController.swift in Sources */,
 				E653438F224547BE00C79868 /* CitiesTableViewController.swift in Sources */,
 				E6C9B7AF2230BD8200B9F63C /* AppDelegate.swift in Sources */,
