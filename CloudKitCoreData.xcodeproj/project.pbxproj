@@ -91,7 +91,6 @@
 		E6C9B7A22230BD8200B9F63C = {
 			isa = PBXGroup;
 			children = (
-				E6DF3EB52251C09A00906995 /* MasterViewController.swift */,
 				E6C9B7AD2230BD8200B9F63C /* CloudKitCoreData */,
 				E6C9B7C22230BD8400B9F63C /* CloudKitCoreDataTests */,
 				E6C9B7CD2230BD8400B9F63C /* CloudKitCoreDataUITests */,
@@ -116,6 +115,7 @@
 				E6C9B7DC2230BD9B00B9F63C /* CloudKitCoreData.entitlements */,
 				E6C9B7AE2230BD8200B9F63C /* AppDelegate.swift */,
 				E6C9B7E02231935600B9F63C /* ApplicationData.swift */,
+				E6DF3EB52251C09A00906995 /* MasterViewController.swift */,
 				E6C9B7B02230BD8200B9F63C /* CountriesTableViewController.swift */,
 				E653438E224547BE00C79868 /* CitiesTableViewController.swift */,
 				E64ABD65224B2581004BAF5C /* PicturesViewController.swift */,

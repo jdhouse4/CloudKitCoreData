@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="604"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="Xir-l3-0GG">
+                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" id="Xir-l3-0GG">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
@@ -157,17 +157,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-X5-kyt">
-                                <rect key="frame" x="16" y="174" width="343" height="604"/>
+                                <rect key="frame" x="16" y="104" width="343" height="604"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="bBn-45-vfy" kind="embed" id="SQC-gx-0uP"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-EO-qKo">
+                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qxm-EO-qKo" firstAttribute="centerY" secondItem="sm6-Yt-W0s" secondAttribute="centerY" id="DFa-d1-y61"/>
+                            <constraint firstItem="qxm-EO-qKo" firstAttribute="centerX" secondItem="sm6-Yt-W0s" secondAttribute="centerX" id="DJp-xo-KDJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G4z-4V-BMA"/>
                     </view>
                     <navigationItem key="navigationItem" id="iXE-T1-7Lc"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qxm-EO-qKo" id="awT-Xt-fG7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTP-SN-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

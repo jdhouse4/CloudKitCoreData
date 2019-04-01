@@ -23,6 +23,11 @@ class CountriesTableViewController: UITableViewController
         center.addObserver(self, selector: #selector(updateInterface(notification:)), name: name, object: nil)
 
         AppData.readCountries()
+
+        if let parent = self.parent as? MasterViewController
+        {
+            parent.activityIndicator.startAnimating()
+        }
     }
 
 
@@ -31,6 +36,12 @@ class CountriesTableViewController: UITableViewController
     {
         print("CountriesTableViewController func updateInterface(notification: Notification)")
         tableView.reloadData()
+
+        if let parent = self.parent as? MasterViewController
+        {
+            parent.activityIndicator.hidesWhenStopped = true
+            parent.activityIndicator.stopAnimating()
+        }
     }
 
 

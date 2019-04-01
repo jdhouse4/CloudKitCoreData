@@ -14,7 +14,8 @@ import UIKit
 class MasterViewController: UIViewController
 {
 
-    private var countriesTableViewController: CountriesTableViewController
+    private var countriesTableViewController: CountriesTableViewController?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
 
