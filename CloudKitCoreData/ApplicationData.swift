@@ -124,6 +124,8 @@ class ApplicationData
 
     func readCities()
     {
+        print("Reading cities")
+        
         if selectedCountry != nil
         {
             let predicate   = NSPredicate(format: "country = %@", selectedCountry)

@@ -28,6 +28,6 @@ class MasterViewController: UIViewController
 
         countriesTableViewController = countriesController
 
-        //countriesController.delegate = self
+        activityIndicator.startAnimating()
     }
 }

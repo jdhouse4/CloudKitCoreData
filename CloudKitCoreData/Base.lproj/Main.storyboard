@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="bBn-45-vfy" userLabel="Countries Table View Controller" customClass="CountriesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zh0-9P-K4J">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="604"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="707"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jZP-o1-WtC" kind="show" identifier="showCities" id="Vqa-UU-RyV"/>
+                                    <segue destination="JVx-SW-RFg" kind="show" identifier="showCities" id="eGr-hA-Jtn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,23 +56,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH5-d8-xyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="117"/>
+            <point key="canvasLocation" x="-247" y="115"/>
+        </scene>
+        <!--Cities View Controller-->
+        <scene sceneID="m0C-eg-u5t">
+            <objects>
+                <viewController id="JVx-SW-RFg" userLabel="Cities View Controller" customClass="CitiesViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h17-qQ-Zyp">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="707"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-QL-Qom">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="673"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="jZP-o1-WtC" kind="embed" id="aOK-ZK-YOU"/>
+                                </connections>
+                            </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
+                                <rect key="frame" x="161.66666666666666" y="343.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f93-ti-te0" firstAttribute="centerY" secondItem="h17-qQ-Zyp" secondAttribute="centerY" id="2CF-58-t7X"/>
+                            <constraint firstItem="f93-ti-te0" firstAttribute="centerX" secondItem="h17-qQ-Zyp" secondAttribute="centerX" id="UIw-8X-Mes"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aUK-V1-zUB"/>
+                    </view>
+                    <connections>
+                        <outlet property="citiesActivityIndicator" destination="f93-ti-te0" id="6FZ-oL-liW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzN-Tj-mkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.60000000000002" y="115.64039408866995"/>
         </scene>
         <!--Cities Table View Controller-->
         <scene sceneID="jGA-k3-yJg">
             <objects>
                 <tableViewController id="jZP-o1-WtC" userLabel="Cities Table View Controller" customClass="CitiesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lGg-7I-q3A">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="604"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" id="Xir-l3-0GG">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="citiesCell" textLabel="OSE-Ha-FVU" style="IBUITableViewCellStyleDefault" id="S4H-oA-avR">
-                                <rect key="frame" x="0.0" y="48" width="343" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4H-oA-avR" id="WOA-le-uJD">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
@@ -100,20 +130,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="citiesActivityIndicator" destination="Xir-l3-0GG" id="v9h-Im-7rR"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-AG-P8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="117"/>
+            <point key="canvasLocation" x="1580" y="115"/>
         </scene>
         <!--Pictures View Controller-->
         <scene sceneID="giw-he-Ylc">
             <objects>
                 <viewController id="Th3-0n-5Hj" userLabel="Pictures View Controller" customClass="PicturesViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="59N-0o-NiJ">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="604"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIK-GJ-qEM">
@@ -130,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJr-cc-xHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2031.2" y="116.74876847290641"/>
+            <point key="canvasLocation" x="2673" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jee-jQ-ZVn">
@@ -157,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-X5-kyt">
-                                <rect key="frame" x="16" y="104" width="343" height="604"/>
+                                <rect key="frame" x="16" y="71" width="343" height="707"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="bBn-45-vfy" kind="embed" id="SQC-gx-0uP"/>

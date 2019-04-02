@@ -15,8 +15,7 @@ import CloudKit
 class CitiesTableViewController: UITableViewController
 {
 
-    @IBOutlet weak var citiesActivityIndicator: UIActivityIndicatorView!
-    
+
 
     override func viewDidLoad()
     {
@@ -26,8 +25,6 @@ class CitiesTableViewController: UITableViewController
         let name    = Notification.Name("UpdateInterface")
 
         center.addObserver(self, selector: #selector(updateInterface(notification:)), name: name, object: nil)
-
-        citiesActivityIndicator.startAnimating()
 
         AppData.readCities()
     }
@@ -39,8 +36,11 @@ class CitiesTableViewController: UITableViewController
         print("CiiesTableViewController func updateInterface(notification: Notification)")
         tableView.reloadData()
 
-        citiesActivityIndicator.hidesWhenStopped = true
-        citiesActivityIndicator.stopAnimating()
+        if let parent = self.parent as? CitiesViewController
+        {
+            parent.citiesActivityIndicator.hidesWhenStopped = true
+            parent.citiesActivityIndicator.stopAnimating()
+        }
     }
 
 
