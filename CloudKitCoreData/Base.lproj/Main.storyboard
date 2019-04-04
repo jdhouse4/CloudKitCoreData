@@ -65,7 +65,7 @@
                                     <segue destination="jZP-o1-WtC" kind="embed" id="aOK-ZK-YOU"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
                                 <rect key="frame" x="161.66666666666666" y="335" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -177,7 +177,7 @@
                                     <segue destination="bBn-45-vfy" kind="embed" id="iee-aK-BWV"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-75-Gaa">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-75-Gaa">
                                 <rect key="frame" x="177" y="396" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>

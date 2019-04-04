@@ -27,7 +27,6 @@ final class CitiesViewController: UIViewController
         }
 
         citiesTableViewController = citiesController
-        citiesActivityIndicator.startAnimating()
     }
 
 }

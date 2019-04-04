@@ -27,7 +27,5 @@ class MasterViewController: UIViewController
         }
 
         countriesTableViewController = countriesController
-
-        activityIndicator.startAnimating()
     }
 }

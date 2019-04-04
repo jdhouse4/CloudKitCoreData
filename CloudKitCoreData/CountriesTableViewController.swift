@@ -34,7 +34,6 @@ class CountriesTableViewController: UITableViewController
 
         if let parent = self.parent as? MasterViewController
         {
-            parent.activityIndicator.hidesWhenStopped = true
             parent.activityIndicator.stopAnimating()
         }
     }

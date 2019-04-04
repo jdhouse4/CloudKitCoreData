@@ -38,7 +38,6 @@ class CitiesTableViewController: UITableViewController
 
         if let parent = self.parent as? CitiesViewController
         {
-            parent.citiesActivityIndicator.hidesWhenStopped = true
             parent.citiesActivityIndicator.stopAnimating()
         }
     }
