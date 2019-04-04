@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="bBn-45-vfy" userLabel="Countries Table View Controller" customClass="CountriesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zh0-9P-K4J">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="707"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -45,14 +45,6 @@
                             <outlet property="delegate" destination="bBn-45-vfy" id="FUN-nJ-MnN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Countries" id="awj-uc-t4M" userLabel="Countries">
-                        <barButtonItem key="backBarButtonItem" title="Countries" id="xbd-xj-dpM"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHS-HG-Cvp">
-                            <connections>
-                                <action selector="addCountry:" destination="bBn-45-vfy" id="Y4W-Y9-obG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH5-d8-xyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,18 +55,18 @@
             <objects>
                 <viewController id="JVx-SW-RFg" userLabel="Cities View Controller" customClass="CitiesViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h17-qQ-Zyp">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="707"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-QL-Qom">
-                                <rect key="frame" x="0.0" y="0.0" width="343" height="673"/>
+                                <rect key="frame" x="0.0" y="-17" width="343" height="673"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="jZP-o1-WtC" kind="embed" id="aOK-ZK-YOU"/>
                                 </connections>
                             </containerView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
-                                <rect key="frame" x="161.66666666666666" y="343.66666666666669" width="20" height="20"/>
+                                <rect key="frame" x="161.66666666666666" y="335" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +76,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUK-V1-zUB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Cities" id="feN-3E-fdn" userLabel="Cities"/>
                     <connections>
                         <outlet property="citiesActivityIndicator" destination="f93-ti-te0" id="6FZ-oL-liW"/>
                     </connections>
@@ -123,13 +116,6 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cities" id="AKP-O3-ZcH" userLabel="Cities">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zup-ZD-vfd">
-                            <connections>
-                                <action selector="addCityWith_sender:" destination="jZP-o1-WtC" id="GKm-4S-t9Q"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-AG-P8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,6 +137,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9RT-F3-c4U"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Pictures" id="tna-QQ-nDT" userLabel="Cities"/>
                     <connections>
                         <outlet property="cityPicture" destination="qIK-GJ-qEM" id="qwx-oq-VIO"/>
                     </connections>
@@ -179,31 +166,28 @@
         <scene sceneID="LLG-At-FNy">
             <objects>
                 <viewController id="QZB-es-jHF" userLabel="Master View Controller" customClass="MasterViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sm6-Yt-W0s">
+                    <view key="view" contentMode="scaleToFill" id="p9r-xh-1AC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-X5-kyt">
-                                <rect key="frame" x="16" y="71" width="343" height="707"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-wd-oI5">
+                                <rect key="frame" x="16" y="88" width="343" height="690"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="bBn-45-vfy" kind="embed" id="SQC-gx-0uP"/>
+                                    <segue destination="bBn-45-vfy" kind="embed" id="iee-aK-BWV"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-EO-qKo">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-75-Gaa">
+                                <rect key="frame" x="177" y="396" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qxm-EO-qKo" firstAttribute="centerY" secondItem="sm6-Yt-W0s" secondAttribute="centerY" id="DFa-d1-y61"/>
-                            <constraint firstItem="qxm-EO-qKo" firstAttribute="centerX" secondItem="sm6-Yt-W0s" secondAttribute="centerX" id="DJp-xo-KDJ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="G4z-4V-BMA"/>
+                        <viewLayoutGuide key="safeArea" id="Tkm-d6-qbz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iXE-T1-7Lc"/>
+                    <navigationItem key="navigationItem" title="Countries" id="iXE-T1-7Lc"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="qxm-EO-qKo" id="awT-Xt-fG7"/>
+                        <outlet property="activityIndicator" destination="1oE-75-Gaa" id="LRA-ch-Hvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTP-SN-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>
