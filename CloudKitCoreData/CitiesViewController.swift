@@ -27,6 +27,8 @@ final class CitiesViewController: UIViewController
         }
 
         citiesTableViewController = citiesController
+
+        citiesActivityIndicator.layer.cornerRadius = 5
     }
 
 }
