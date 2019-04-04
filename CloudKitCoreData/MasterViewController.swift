@@ -27,5 +27,7 @@ class MasterViewController: UIViewController
         }
 
         countriesTableViewController = countriesController
+
+        activityIndicator.layer.cornerRadius = 5
     }
 }
