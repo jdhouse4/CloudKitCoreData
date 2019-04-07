@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 
 
@@ -19,8 +20,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // Setup User Defaults dictionary
+        let userSettings = UserDefaults.standard
+        let values = [ "subscriptionSaved": false, "zoneCreated": false]
+        userSettings.register(defaults: values)
+
+        application.registerForRemoteNotifications()
+        AppData.configureDatabase(executeClosure: {})
+
         return true
+    }
+
+
+
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
+    {
+        let notification = CKNotification(fromRemoteNotificationDictionary: userInfo) as? CKDatabaseNotification
+
+        if notification != nil
+        {
+            
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
