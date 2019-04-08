@@ -1,3 +1,4 @@
+
 //
 //  ApplicationData.swift
 //  CloudKitCoreData
@@ -40,8 +41,8 @@ class ApplicationData
         {
             print("Since there are no subscriptions, a new subscription is needed.")
 
-            let newSubscription = CKDatabaseSubscription(subscriptionID: "updateDatabase")
-            print("AppData configureDatabase updateDatabase")
+            let newSubscription = CKDatabaseSubscription(subscriptionID: "updatesDatabase")
+            print("AppData configureDatabase create new subscription with ID updatesDatabase")
 
             let info = CKSubscription.NotificationInfo()
             info.shouldSendContentAvailable = true
@@ -62,15 +63,18 @@ class ApplicationData
 
         if !userSettings.bool(forKey: "zoneCreated")
         {
+            print("Creating zone: listPlaces.")
+
             let newZone = CKRecordZone(zoneName: "listPlaces")
 
             database.save(newZone, completionHandler: { (zone, error) in
                 if error != nil
                 {
-                    print("Error Creating Zone")
+                    print("Error Creating Zone listPlaces")
                 }
                 else
                 {
+                    print("zone listPlaces created")
                     userSettings.set(true, forKey: "zoneCreated")
                     executeClosure()
                 }
@@ -78,6 +82,7 @@ class ApplicationData
         }
         else
         {
+            print("So...error creating subscription and zone listPlaces")
             executeClosure()
         }
     }
@@ -86,6 +91,8 @@ class ApplicationData
 
     func checkUpdates(finishClosure: @escaping (UIBackgroundFetchResult) -> Void)
     {
+        print("AppData checkUpdates(finishClosure: @escaping () -> Void)")
+
         configureDatabase(executeClosure: {
             let mainQueue = OperationQueue.main
             mainQueue.addOperation ({
@@ -98,6 +105,8 @@ class ApplicationData
 
     func downloadUpdates(finishClosure: @escaping (UIBackgroundFetchResult) -> Void)
     {
+        print("AppData downloadUpdates(finishClosure: @escaping () -> Void)")
+
         var changeToken: CKServerChangeToken!
         var changeZoneToken: CKServerChangeToken!
 

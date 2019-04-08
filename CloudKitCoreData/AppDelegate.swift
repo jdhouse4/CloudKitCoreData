@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
 
         // Setup User Defaults dictionary
         let userSettings = UserDefaults.standard
-        let values = [ "subscriptionSaved": false, "zoneCreated": false]
+        let values = [ "subscriptionSaved": false, "zoneCreated": false] 
         userSettings.register(defaults: values)
 
         application.registerForRemoteNotifications()
@@ -45,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         if notification != nil
         {
-            AppData.checkUpdates(finishClosure: {( result ) in
+            AppData.checkUpdates(finishClosure: { ( result ) in
                 let mainQueue = OperationQueue.main
                 mainQueue.addOperation({
                     completionHandler(result)
@@ -53,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             })
         }
     }
+
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
