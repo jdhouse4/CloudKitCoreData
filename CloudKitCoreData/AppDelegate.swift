@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         userSettings.register(defaults: values)
 
         application.registerForRemoteNotifications()
+
         AppData.configureDatabase(executeClosure: {})
 
         return true
@@ -38,11 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
     {
+        print("AppDelegate application(_:, didReceiveRemoteNotification userInfo:, fetchCompletionHandler:)")
+
         let notification = CKNotification(fromRemoteNotificationDictionary: userInfo) as? CKDatabaseNotification
 
         if notification != nil
         {
-            
+            AppData.checkUpdates(finishClosure: {( result ) in
+                let mainQueue = OperationQueue.main
+                mainQueue.addOperation({
+                    completionHandler(result)
+                })
+            })
         }
     }
 

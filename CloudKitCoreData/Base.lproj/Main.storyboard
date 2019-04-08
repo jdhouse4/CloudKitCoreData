@@ -58,17 +58,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
+                                <rect key="frame" x="153" y="326.66666666666669" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-QL-Qom">
-                                <rect key="frame" x="0.0" y="-17" width="343" height="673"/>
+                                <rect key="frame" x="0.0" y="9" width="343" height="673"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="jZP-o1-WtC" kind="embed" id="aOK-ZK-YOU"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f93-ti-te0" userLabel="Cities Activity Indicator">
-                                <rect key="frame" x="153" y="326.66666666666669" width="37" height="37"/>
-                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -91,19 +91,19 @@
             <objects>
                 <tableViewController id="jZP-o1-WtC" userLabel="Cities Table View Controller" customClass="CitiesTableViewController" customModule="CloudKitCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lGg-7I-q3A">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="673"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="citiesCell" textLabel="OSE-Ha-FVU" style="IBUITableViewCellStyleDefault" id="S4H-oA-avR">
-                                <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4H-oA-avR" id="WOA-le-uJD">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSE-Ha-FVU">
-                                            <rect key="frame" x="16" y="0.0" width="311" height="43.666666666666664"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -187,9 +187,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tkm-d6-qbz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Countries" id="iXE-T1-7Lc"/>
+                    <navigationItem key="navigationItem" title="Countries" id="iXE-T1-7Lc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KHM-dU-vPW">
+                            <connections>
+                                <action selector="addCountry:" destination="QZB-es-jHF" id="Pur-W3-h9F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="1oE-75-Gaa" id="LRA-ch-Hvk"/>
+                        <outlet property="addCountryBarButton" destination="KHM-dU-vPW" id="VNY-Fu-yBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTP-SN-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>

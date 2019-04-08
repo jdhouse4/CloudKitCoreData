@@ -16,6 +16,7 @@ class MasterViewController: UIViewController
 
     private var countriesTableViewController: CountriesTableViewController?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addCountryBarButton: UIBarButtonItem!
 
 
 
@@ -29,5 +30,12 @@ class MasterViewController: UIViewController
         countriesTableViewController = countriesController
 
         activityIndicator.layer.cornerRadius = 5
+    }
+
+
+
+    @IBAction func addCountry(_ sender: Any)
+    {
+        countriesTableViewController?.addCountry(addCountryBarButton)
     }
 }

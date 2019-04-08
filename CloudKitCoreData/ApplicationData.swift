@@ -32,11 +32,16 @@ class ApplicationData
 
     func configureDatabase(executeClosure: @escaping () -> Void)
     {
+        print("AppData configureDatabase(executeClosure: @escaping () -> Void)")
+
         let userSettings = UserDefaults.standard
 
         if !userSettings.bool(forKey: "subscriptionSaved")
         {
+            print("Since there are no subscriptions, a new subscription is needed.")
+
             let newSubscription = CKDatabaseSubscription(subscriptionID: "updateDatabase")
+            print("AppData configureDatabase updateDatabase")
 
             let info = CKSubscription.NotificationInfo()
             info.shouldSendContentAvailable = true
