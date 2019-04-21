@@ -23,8 +23,8 @@ class ApplicationData
 
     init()
     {
-        //let container   = CKContainer.default()
-        let container   = CKContainer(identifier: "iCloud.com.portablefrontier.CloudKitCoreData")
+        let container   = CKContainer.default()
+        //let container   = CKContainer(identifier: "iCloud.com.portablefrontier.CloudKitCoreData")
         database        = container.publicCloudDatabase
     }
 
