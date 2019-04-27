@@ -26,6 +26,40 @@ class ApplicationData
         let container   = CKContainer.default()
         //let container   = CKContainer(identifier: "iCloud.com.portablefrontier.CloudKitCoreData")
         database        = container.publicCloudDatabase
+
+        self.setCountrySubscription()
+    }
+
+
+
+    func setCountrySubscription() -> Void
+    {
+        let predicate       = NSPredicate(value: true)
+        let subscription    = CKQuerySubscription(recordType: "Countries", predicate: predicate, options: [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion])
+        let subscriptionID  = subscription.subscriptionID
+        let subscriptionType    = subscription.subscriptionType.hashValue
+        print("Subscription ID = \(subscriptionID), subscriptionType = \(subscriptionType)")
+
+
+        let info                        = CKSubscription.NotificationInfo()
+        info.shouldSendContentAvailable = true
+        info.alertBody                  = "Updates to Countries"
+        info.shouldBadge                = true
+        subscription.notificationInfo   = info
+
+        database.save(subscription, completionHandler: {
+            (subscription, error) in
+
+            if error != nil
+            {
+                print("Error Creating Subscription")
+                print(error?.localizedDescription as Any)
+            }
+            else
+            {
+                print("Subscription Saved")
+            }
+        })
     }
 
 
@@ -36,7 +70,7 @@ class ApplicationData
 
         if text != ""
         {
-            let id      = CKRecord.ID(recordName: "idcountry-\(UUID())")
+            let id      = CKRecord.ID(recordName: "idcountry-\(text)-\(UUID())")
             let record  = CKRecord(recordType: "Countries", recordID: id)
             record.setObject(text as NSString, forKey: "name")
 
@@ -62,7 +96,7 @@ class ApplicationData
 
         if text != ""
         {
-            let id      = CKRecord.ID(recordName: "idcity-\(UUID())")
+            let id      = CKRecord.ID(recordName: "idcity-\(text)-\(UUID())")
             let record  = CKRecord(recordType: "Cities", recordID: id)
             record.setObject(text as NSString, forKey: "name")
 
