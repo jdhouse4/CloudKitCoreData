@@ -27,14 +27,49 @@ class ApplicationData
         //let container   = CKContainer(identifier: "iCloud.com.portablefrontier.CloudKitCoreData")
         database        = container.publicCloudDatabase
 
-        self.setCountrySubscription()
+        self.setSubscriptions()
     }
 
 
 
-    func setCountrySubscription() -> Void
+    func setSubscriptions() -> Void
     {
+        // First, let's find out if I can read the recordType of the existing CKQuerySubscription instances
+        database.fetchAllSubscriptions(completionHandler: { (subscriptions, error) in
+            if error != nil
+            {
+                print("Error Reading Subscriptions")
+                print(error?.localizedDescription as Any)
+            }
+            else
+            {
+                // Good news! There are subscriptions. Now let's see if we can read them as CKQuerySubscription instances.
+                if let subscriptions = subscriptions
+                {
+                    print("Number of subscriptions: \(subscriptions.count)")
+
+                    for subscription in subscriptions
+                    {
+                        //print("Subscription: \(subscription)")
+
+                        if let ckQuerySubscription = subscription as? CKQuerySubscription {
+                            print("ckQuerySubscription for \(String(describing: ckQuerySubscription.recordType!))")
+
+                            if String(describing: ckQuerySubscription.recordType!) == "Countries"
+                            {
+                                print("You have \(subscriptions.count) CKQuerySubscription instances")
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        })
+
+        /*
         let predicate       = NSPredicate(value: true)
+
         let subscription    = CKQuerySubscription(recordType: "Countries", predicate: predicate, options: [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion])
         let subscriptionID  = subscription.subscriptionID
         let subscriptionType    = subscription.subscriptionType.hashValue
@@ -60,6 +95,7 @@ class ApplicationData
                 print("Subscription Saved")
             }
         })
+    */
     }
 
 
