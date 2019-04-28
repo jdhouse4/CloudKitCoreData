@@ -34,12 +34,20 @@ class ApplicationData
 
     func setSubscriptions() -> Void
     {
+        //
+        // Detail the process:
+        //
+        // 1. Fetch all, if any, existing subscriptions on the public database.
+        // 2.
         // First, let's find out if I can read the recordType of the existing CKQuerySubscription instances
         database.fetchAllSubscriptions(completionHandler: { (subscriptions, error) in
             if error != nil
             {
                 print("Error Reading Subscriptions")
                 print(error?.localizedDescription as Any)
+
+                // Might be a good point at which to create some ckQuerySubscriptions
+                self.createCountriesCKQuerySubscription()
             }
             else
             {
@@ -48,56 +56,88 @@ class ApplicationData
                 {
                     print("Number of subscriptions: \(subscriptions.count)")
 
-                    for subscription in subscriptions
+                    for subscription in subscriptions // Iteration
                     {
                         //print("Subscription: \(subscription)")
 
+                        // Let's see if we can read a subsciption as a CKQuerySubscription instance
                         if let ckQuerySubscription = subscription as? CKQuerySubscription {
                             print("ckQuerySubscription for \(String(describing: ckQuerySubscription.recordType!))")
 
-                            if String(describing: ckQuerySubscription.recordType!) == "Countries"
+                            if String(describing: ckQuerySubscription.recordType!) == "Countries" // Recursion
                             {
                                 print("You have \(subscriptions.count) CKQuerySubscription instances")
                             }
+
+                            // Maybe do this with all the CKQuerySubscription instances...
+
+                            // Could do an
+                            //
+                            // if a ckQuerySubscription with desired recordType exist, say Cheers!
+                            // else create such a subscpription...
+                            //
+                            // But this needs to be at the end of this function and outside of this
                         }
+
+
+                        // Delete existing subscriptions and start anew!
+                        /*
+                         // Blow-out the existing subscription
+                         self.database.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { (message, error) in
+                         if error != nil
+                         {
+                         print("Could Not Delete Subscriptions From Public Database")
+                         print(error?.localizedDescription as Any)
+                         }
+                         else
+                         {
+                         print("I have a message: \(String(describing: message))")
+                         }
+                         })
+                         */
+
                     }
 
-
+                    self.createCountriesCKQuerySubscription()
                 }
             }
         })
-
-        /*
-        let predicate       = NSPredicate(value: true)
-
-        let subscription    = CKQuerySubscription(recordType: "Countries", predicate: predicate, options: [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion])
-        let subscriptionID  = subscription.subscriptionID
-        let subscriptionType    = subscription.subscriptionType.hashValue
-        print("Subscription ID = \(subscriptionID), subscriptionType = \(subscriptionType)")
-
-
-        let info                        = CKSubscription.NotificationInfo()
-        info.shouldSendContentAvailable = true
-        info.alertBody                  = "Updates to Countries"
-        info.shouldBadge                = true
-        subscription.notificationInfo   = info
-
-        database.save(subscription, completionHandler: {
-            (subscription, error) in
-
-            if error != nil
-            {
-                print("Error Creating Subscription")
-                print(error?.localizedDescription as Any)
-            }
-            else
-            {
-                print("Subscription Saved")
-            }
-        })
-    */
     }
 
+
+
+    func createCountriesCKQuerySubscription() -> Void
+    {
+        /*
+         let predicate       = NSPredicate(value: true)
+
+         let subscription    = CKQuerySubscription(recordType: "Countries", predicate: predicate, options: [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion])
+         let subscriptionID  = subscription.subscriptionID
+         let subscriptionType    = subscription.subscriptionType.hashValue
+         print("Subscription ID = \(subscriptionID), subscriptionType = \(subscriptionType)")
+
+
+         let info                        = CKSubscription.NotificationInfo()
+         info.shouldSendContentAvailable = true
+         info.alertBody                  = "Updates to Countries"
+         info.shouldBadge                = true
+         subscription.notificationInfo   = info
+
+         database.save(subscription, completionHandler: {
+         (subscription, error) in
+
+         if error != nil
+         {
+         print("Error Creating Subscription")
+         print(error?.localizedDescription as Any)
+         }
+         else
+         {
+         print("Subscription Saved")
+         }
+         })
+         */
+    }
 
 
     func insertCountry(name: String)
