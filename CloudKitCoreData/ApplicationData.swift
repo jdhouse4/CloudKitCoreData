@@ -40,7 +40,7 @@ class ApplicationData
         // 1. Fetch all, if any, existing subscriptions on the public database.
         // 2.
         // First, let's find out if I can read the recordType of the existing CKQuerySubscription instances
-        database.fetchAllSubscriptions(completionHandler: { (subscriptions, error) in
+        database.fetchAllSubscriptions(completionHandler: { [unowned self] (iCloudServerSubscriptions, error) in
             if error != nil
             {
                 print("Error Reading Subscriptions")
@@ -52,7 +52,7 @@ class ApplicationData
             else
             {
                 // Good news! There are subscriptions. Now let's see if we can read them as CKQuerySubscription instances.
-                if let subscriptions = subscriptions
+                if let subscriptions = iCloudServerSubscriptions
                 {
                     print("Number of subscriptions: \(subscriptions.count)")
 
@@ -60,10 +60,18 @@ class ApplicationData
                     {
                         //print("Subscription: \(subscription)")
 
-                        // Let's see if we can read a subsciption as a CKQuerySubscription instance
+                        // Read subsciption as a CKQuerySubscription instance
                         if let ckQuerySubscription = subscription as? CKQuerySubscription {
                             print("ckQuerySubscription for \(String(describing: ckQuerySubscription.recordType!))")
 
+                            //
+                            // This might be a really good place to create a function that takes a trailing closure
+                            //
+                            // func checkSubscription(completionHandler:{})
+                            //
+                            // That checks for whether subscriptions from the Subscriptions enum have been created
+                            // and, if not, creates the missing subscriptions.
+                            //
                             if String(describing: ckQuerySubscription.recordType!) == "Countries" // Recursion
                             {
                                 print("You have \(subscriptions.count) CKQuerySubscription instances")
@@ -81,6 +89,9 @@ class ApplicationData
 
 
                         // Delete existing subscriptions and start anew!
+                        //
+                        // Ummm...why?
+
                         /*
                          // Blow-out the existing subscription
                          self.database.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { (message, error) in
@@ -104,6 +115,68 @@ class ApplicationData
         })
     }
 
+
+    /*
+    enum SubscriptionCheckError: Error
+    {
+        case subscriptionDoesNotExist
+        case cannotReadSubscriptionAsCKQuerySubscription
+    }
+
+
+
+    func checkCKQuerySubscriptions(subscriptions: [CKSubscription], completionHandler: (CKQuerySubscription?, Error?) -> Void)
+    {
+        var ckSubscript: CKSubscription?
+
+        for ckSubscript in subscriptions // Iteration
+        {
+            //print("Subscription: \(subscription)")
+
+            // Read subsciption as a CKQuerySubscription instance
+            if let ckQuerySubscription = ckSubscription as? CKQuerySubscription
+            {
+                print("ckQuerySubscription for \(String(describing: ckQuerySubscription.recordType!))")
+
+                //
+                // This might be a really good place to create a function that takes a trailing closure
+                //
+                // func checkSubscription(completionHandler:{})
+                //
+                // That checks for whether subscriptions from the Subscriptions enum have been created
+                // and, if not, creates the missing subscriptions.
+                //
+                if String(describing: ckQuerySubscription.recordType!) == "Countries" // Recursion
+                {
+                    print("You have \(subscriptions.count) CKQuerySubscription instances")
+                }
+
+                // Maybe do this with all the CKQuerySubscription instances...
+
+                // Could do an
+                //
+                // if a ckQuerySubscription with desired recordType exist, say Cheers!
+                // else create such a subscpription...
+                //
+                // But this needs to be at the end of this function and outside of this
+            }
+            else
+            {
+                var error = SubscriptionCheckError.cannotReadSubscriptionAsCKQuerySubscription
+            }
+            /*
+            completionHandler()
+            {
+            }
+            */
+
+            print(error)
+        }
+    }
+    */
+
+
+    
 
 
     func createCountriesCKQuerySubscription() -> Void
@@ -138,6 +211,7 @@ class ApplicationData
          })
          */
     }
+
 
 
     func insertCountry(name: String)
