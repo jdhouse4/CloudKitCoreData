@@ -87,6 +87,8 @@ class CountriesTableViewController: UITableViewController
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        print("\n\nCountriesTableViewController prepare(for segue:, sender:)")
+
         if segue.identifier == "showCities"
         {
             if let indexPath = self.tableView.indexPathForSelectedRow

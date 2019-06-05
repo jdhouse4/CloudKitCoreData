@@ -40,7 +40,7 @@ class ApplicationData
         // 1. Fetch all, if any, existing subscriptions on the public database.
         // 2.
         // First, let's find out if I can read the recordType of the existing CKQuerySubscription instances
-        database.fetchAllSubscriptions(completionHandler: { [unowned self] (iCloudServerSubscriptions, error) in
+        database.fetchAllSubscriptions(completionHandler: { /*[unowned self]*/ (iCloudServerSubscriptions, error) in
             if error != nil
             {
                 print("Error Reading Subscriptions")
@@ -79,7 +79,6 @@ class ApplicationData
 
                             // Maybe do this with all the CKQuerySubscription instances...
 
-                            // Could do an
                             //
                             // if a ckQuerySubscription with desired recordType exist, say Cheers!
                             // else create such a subscpription...
@@ -176,7 +175,7 @@ class ApplicationData
     */
 
 
-    
+
 
 
     func createCountriesCKQuerySubscription() -> Void
@@ -337,7 +336,7 @@ class ApplicationData
 
     func updateInterface()
     {
-        print("ApplicationData func updateInterface()")
+        print("ApplicationData updateInterface()")
         let main = OperationQueue.main
         main.addOperation ({
             let center  = NotificationCenter.default

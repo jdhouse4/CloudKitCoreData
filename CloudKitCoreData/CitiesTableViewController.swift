@@ -16,11 +16,26 @@ class CitiesTableViewController: UITableViewController
 {
 
     @IBOutlet weak var citiesActivityIndicator: UIActivityIndicatorView!
-    
+
+
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(true)
+
+        print("CitiesTableviewController viewWillAppear(animated: Bool)")
+
+        //tableView.reloadData()
+    }
+
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        print("CitiesTableviewControlelr viewDidLoad()")
+
+        tableView.reloadData()
 
         let center  = NotificationCenter.default
         let name    = Notification.Name("UpdateInterface")
@@ -30,6 +45,16 @@ class CitiesTableViewController: UITableViewController
         citiesActivityIndicator.startAnimating()
 
         AppData.readCities()
+    }
+
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(true)
+
+
+        tableView.reloadData()
     }
 
 
